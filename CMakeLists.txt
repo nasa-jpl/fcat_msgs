@@ -18,6 +18,7 @@ endif()
 # find dependencies
 find_package(ament_cmake REQUIRED)
 find_package(builtin_interfaces REQUIRED)
+find_package(geometry_msgs REQUIRED)
 find_package(rosidl_default_generators REQUIRED)
 
 set(msg_files
@@ -56,6 +57,8 @@ set(msg_files
   "msg/FilterState.msg"
   "msg/FilterStates.msg"
   "msg/FtsTareCmd.msg"
+  "msg/FtsState.msg"
+  "msg/FtsStates.msg"
   "msg/FunctionState.msg"
   "msg/FunctionStates.msg"
   "msg/JedSetCmdValueCmd.msg"
@@ -85,11 +88,8 @@ set(srv_files
 rosidl_generate_interfaces(fcat_msgs
   ${msg_files}
   ${srv_files}
-  DEPENDENCIES builtin_interfaces
+  DEPENDENCIES builtin_interfaces geometry_msgs
   )
-#install(DIRECTORY include/${PROJECT_NAME}/
-#    DESTINATION include/${PROJECT_NAME}
-#    )
 
 ament_export_dependencies(rosidl_default_runtime)
 
