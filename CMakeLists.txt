@@ -61,6 +61,8 @@ set(msg_files
   "msg/FtsStates.msg"
   "msg/FunctionState.msg"
   "msg/FunctionStates.msg"
+  "msg/Ild1900State.msg"
+  "msg/Ild1900States.msg"
   "msg/JedSetCmdValueCmd.msg"
   "msg/JedState.msg"
   "msg/JedStates.msg"
