@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.5)
-project(fcat_msgs)
+project(fcat_msgs
+    VERSION 0.5.1
+    LANGUAGES C CXX
+    DESCRIPTION "ROS2 FCAT Messages"
+)
 
 # Default to C99
 if(NOT CMAKE_C_STANDARD)
@@ -24,9 +28,11 @@ find_package(rosidl_default_generators REQUIRED)
 set(msg_files
   "msg/ActuatorCalibrateCmd.msg"
   "msg/ActuatorCspCmd.msg"
+  "msg/ActuatorCspCmds.msg"
   "msg/ActuatorCstCmd.msg"
   "msg/ActuatorCsvCmd.msg"
   "msg/ActuatorProfPosCmd.msg"
+  "msg/ActuatorProfPosCmds.msg"
   "msg/ActuatorProfTorqueCmd.msg"
   "msg/ActuatorProfVelCmd.msg"
   "msg/ActuatorSetOutputPositionCmd.msg"
@@ -57,8 +63,6 @@ set(msg_files
   "msg/FilterState.msg"
   "msg/FilterStates.msg"
   "msg/FtsTareCmd.msg"
-  "msg/FtsState.msg"
-  "msg/FtsStates.msg"
   "msg/FunctionState.msg"
   "msg/FunctionStates.msg"
   "msg/JedSetCmdValueCmd.msg"
@@ -88,7 +92,7 @@ set(srv_files
 rosidl_generate_interfaces(fcat_msgs
   ${msg_files}
   ${srv_files}
-  DEPENDENCIES builtin_interfaces geometry_msgs
+  DEPENDENCIES builtin_interfaces
   )
 
 ament_export_dependencies(rosidl_default_runtime)
