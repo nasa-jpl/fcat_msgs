@@ -1,5 +1,8 @@
 # fcat_msgs
 
+> [!WARNING]
+> This repository is deprecated. Please use [nasa-jpl/fcat](https://github.com/nasa-jpl/fcat) instead, which now includes fcat_msgs.
+
 ROS 2 message and service definitions for the FCAT (Fieldbus Common Abstraction Tool) system.
 
 ## Overview
